@@ -39,15 +39,7 @@ function WordRelay() {
   return (
     <>
       <div>
-        {
-          words.length === 0
-            ? (
-              <p>{message}</p>
-            )
-            : (
-              <p>{message} (이전 단어: {words[words.length - 1]})</p>
-            )
-        }
+        <p>{message} {words.length !== 0 && (<>(이전 단어: {words[words.length - 1]})</>)}</p>
       </div>
       <div>{clearCount ? `${clearCount}회` : ''}</div>
       <form onSubmit={onSubmitForm}>
